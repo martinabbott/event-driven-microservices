@@ -1,0 +1,16 @@
+{
+  "bindings": [
+    {
+      "type": "eventGridTrigger",
+      "name": "eventGridEvent",
+      "direction": "in"
+    },
+    {
+      "type": "eventGrid",
+      "name": "outputEvent",
+      "topicEndpointUri": "OrderEventEndpoint",
+      "topicKeySetting": "OrderEventKey",
+      "direction": "out"
+    }
+  ]
+}

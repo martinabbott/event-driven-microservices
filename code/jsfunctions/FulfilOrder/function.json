@@ -1,0 +1,22 @@
+{
+  "bindings": [
+    {
+      "type": "cosmosDBTrigger",
+      "name": "documents",
+      "direction": "in",
+      "leaseCollectionName": "leases",
+      "leaseCollectionPrefix": "fulfil",
+      "connectionStringSetting": "CosmosDBSQL",
+      "databaseName": "orderdb",
+      "collectionName": "orders",
+      "createLeaseCollectionIfNotExists": "false"
+    },
+    {
+      "type": "eventGrid",
+      "name": "outputEvent",
+      "topicEndpointUri": "BackorderEventEndpoint",
+      "topicKeySetting": "BackorderEventKey",
+      "direction": "out"
+    }
+  ]
+}

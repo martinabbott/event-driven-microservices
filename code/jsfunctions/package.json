@@ -1,0 +1,16 @@
+{
+  "name": "JavaScript",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "azure-eventgrid": "^1.6.0",
+    "ms-rest-azure": "^3.0.0",
+    "url": "^0.11.0",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {}
+}
