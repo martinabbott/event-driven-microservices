@@ -19,10 +19,16 @@ In the MongoDB Cosmos DB instance, create a database called *store* with collect
 
 In the SQL API Cosmos DB instance, create a database called *orderdb* with collections called *orders* and *leases*
 
+## Visual Studio Code
+
+Make sure you have the Visual Studio Code Azure Functions extension installed and in order to run the Python function you will need to install Python and configure Azure Functions so that it knows where to find your executable.
+
+Once you've cloned the repository, just go to each language folder and open that folder in Visual Studio Code and start the Azure Functions runtime.
+
 ## ngrok
 The demonstration uses [ngrok](https://ngrok.com/) to allow routing from Azure Event Grid to the Azure Functions running locally. There need to be 3 instances of ngrok running bound to ports 7071, 7072 and 7073.
 
-To create the Event Grid subscriptions, use the following when defining the web hooks for each subscription within the Azure Portal.
+To create the Event Grid subscriptions in the Azure portal, use the following when defining the web hooks for each subscription within the Azure Portal.
 
 ### cartCheckout Event Grid Topic
 `[ngrok HTTPS forwarding address for port 7071]/runtime/webhooks/EventGrid?functionName=OrderSubmitted`
@@ -38,6 +44,8 @@ To create the Event Grid subscriptions, use the following when defining the web 
 
 The forwarding address is obtained from the following.
 ![alt text](https://github.com/martinabbott/event-driven-microservices/blob/master/images/ngrok.png "ngrok forwarding address")
+
+NOTE: In order to create the Event Grid subscriptions you will need to have the 3 instances of ngrok running and the 3 instances of the Azure Functions runtime running locally (one for C#, one for JavaScript and one for Python) as the webhook endpoints need to be available when creating the subscriptions in the Azure Portal.
 
 ## Running the demo
 In the postman folder are two collections, one for publishing data to the cart and one for checking data in the order collection.
