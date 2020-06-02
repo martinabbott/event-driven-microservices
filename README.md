@@ -13,7 +13,7 @@ The demonstration follows a very basic order processing scenario that uses mulit
 You will need to create the following artefacts in a Microsoft Azure subscription.
 ![alt text](https://github.com/martinabbott/event-driven-microservices/blob/master/images/azure-subscription.png "Azure Subscription Setup")
 
-You will need to change the names of the artefacts to ensure there is no collision with globally available names.
+You will need to change the names of the artefacts to ensure there is no collision with globally unique names.
 
 In the MongoDB Cosmos DB instance, create a database called *store* with collections called *cart* and *leases*.
 
@@ -25,10 +25,12 @@ Make sure you have the Visual Studio Code Azure Functions extension installed an
 
 Once you've cloned the repository, just go to each language folder and open that folder in Visual Studio Code and start the Azure Functions runtime.
 
-## ngrok
+## ngrok and Event Grid Subscriptions
 The demonstration uses [ngrok](https://ngrok.com/) to allow routing from Azure Event Grid to the Azure Functions running locally. There need to be 3 instances of ngrok running bound to ports 7071, 7072 and 7073.
 
 To create the Event Grid subscriptions in the Azure portal, use the following when defining the web hooks for each subscription within the Azure Portal.
+
+NOTE: The names match the Azure subscription image and will need to be replaced by those chosen when the artefacts were created.
 
 ### cartCheckout Event Grid Topic
 `[ngrok HTTPS forwarding address for port 7071]/runtime/webhooks/EventGrid?functionName=OrderSubmitted`
@@ -48,6 +50,8 @@ The forwarding address is obtained from the following.
 NOTE: In order to create the Event Grid subscriptions you will need to have the 3 instances of ngrok running and the 3 instances of the Azure Functions runtime running locally (one for C#, one for JavaScript and one for Python) as the webhook endpoints need to be available when creating the subscriptions in the Azure Portal.
 
 ## Running the demo
+You will need to update the *local.settings.json* files in the C# and JavaScript functions folders for the appropriate values of connection strings, endpoints and keys. 
+
 In the postman folder are two collections, one for publishing data to the cart and one for checking data in the order collection.
 
 To run the demo, first use the InsertCart request. This creates a cart record in the Mongo DB Cosmos DB cart collection.
