@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "cc7b4528-26a5-4e70-9653-6a8dee6ddcaa",
+		"name": "Cart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetCart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7071/api/cart/12345",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"cart",
+						"12345"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CheckoutCart",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cartId\": \"12345\",\n    \"customerId\": \"1238AFCA-A6CF-4706-AE4E-CD055F10B8F8\",\n    \"value\": 695.70,\n    \"createdDate\": \"2020-02-10T08:28:56.782Z\",\n    \"cartStatus\": \"complete\",\n    \"items\": [\n        {\n            \"itemId\": \"9db67e4b-bd16-4b3b-ba82-2f9cc28b134f\",\n            \"size\": 8,\n            \"quantity\": 1,\n            \"unitPrice\": 195.50\n        },\n        {\n            \"itemId\": \"ebc60fb5-df98-4ded-99e2-ac419d29bc0a\",\n            \"size\": 7,\n            \"quantity\": 2,\n            \"unitPrice\": 250.10\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/cart/checkout/12345",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"cart",
+						"checkout",
+						"12345"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertCart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cartId\": \"12345\",\n    \"customerId\": \"1238AFCA-A6CF-4706-AE4E-CD055F10B8F8\",\n    \"value\": 695.70,\n    \"createdDate\": \"2020-02-10T08:28:56.782Z\",\n    \"cartStatus\": \"inprogress\",\n    \"items\": [\n        {\n            \"itemId\": \"9db67e4b-bd16-4b3b-ba82-2f9cc28b134f\",\n            \"size\": 8,\n            \"quantity\": 1,\n            \"unitPrice\": 195.50\n        },\n        {\n            \"itemId\": \"ebc60fb5-df98-4ded-99e2-ac419d29bc0a\",\n            \"size\": 7,\n            \"quantity\": 2,\n            \"unitPrice\": 250.10\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
