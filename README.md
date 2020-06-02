@@ -6,12 +6,12 @@ The code uses Azure Functions, Event Grid and Cosmos DB to demonstrate event-dri
 
 The demonstration follows a very basic order processing scenario that uses mulitple langauges and data stores. Whilst the implementation is split by language, a real implementation would be split by domain objects and data stores.
 [IMAGE OF SCENARIO]
-![alt text](https://github.com/martinabbott/event-driven-microservices/images/demo-scenario.png "Demo Scenario")
+![alt text](https://github.com/martinabbott/event-driven-microservices/blob/master/images/demo-scenario.png "Demo Scenario")
 
 ## Prerequisites
 ### Azure Subscription Setup
 You will need to create the following artefacts in a Microsoft Azure subscription.
-![alt text](https://github.com/martinabbott/event-driven-microservices/images/azure-subscription.png "Azure Subscription Setup")
+![alt text](https://github.com/martinabbott/event-driven-microservices/blob/master/images/azure-subscription.png "Azure Subscription Setup")
 
 You will need to change the names of the artefacts to ensure there is no collision with globally available names.
 
@@ -37,7 +37,7 @@ To create the Event Grid subscriptions, use the following when defining the web 
 `[ngrok HTTPS forwarding address for port 7073]/runtime/webhooks/EventGrid?functionName=ProcessInventory`
 
 The forwarding address is obtained from the following.
-![alt text](https://github.com/martinabbott/event-driven-microservices/images/ngrok.png "ngrok forwarding address")
+![alt text](https://github.com/martinabbott/event-driven-microservices/blob/master/images/ngrok.png "ngrok forwarding address")
 
 ## Running the demo
 In the postman folder are two collections, one for publishing data to the cart and one for checking data in the order collection.
