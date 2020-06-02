@@ -1,0 +1,15 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "CosmosDBSQL": "[COSMOS DB SQL API CONNECTION STRING]",
+    "OrderEventEndpoint": "[ORDER STATUS EVENT GRID ENDPOINT]",
+    "OrderEventKey": "[ORDER STATUS EVENT GRID KEY]",
+    "BackorderEventEndpoint": "[BACKORDER PROCESS EVENT GRID ENDPOINT]",
+    "BackorderEventKey": "[BACKORDER PROCESS EVENT GRID KEY]"
+  },
+  "Host": {
+    "LocalHttpPort": 7072
+  }
+}
