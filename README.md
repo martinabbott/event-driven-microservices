@@ -5,7 +5,6 @@ This repository contains the code delivered as a demonstration during my present
 The code uses Azure Functions, Event Grid and Cosmos DB to demonstrate event-driven design. The code is nothing more than scaffold, there is no exception handling, failure handling or any logging, auditing, security or tracing that would be built in to a final solution, and as such is offered as is.
 
 The demonstration follows a very basic order processing scenario that uses mulitple langauges and data stores. Whilst the implementation is split by language, a real implementation would be split by domain objects and data stores.
-[IMAGE OF SCENARIO]
 ![alt text](https://github.com/martinabbott/event-driven-microservices/blob/master/images/demo-scenario.png "Demo Scenario")
 
 ## Prerequisites
